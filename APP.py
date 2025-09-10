@@ -7,12 +7,12 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, LabelEncoder, OneHotEncoder
 import  pickle 
-
+from keras.losses import MeanAbsoluteError
 ## Load the trained model, scaler , onehot, label encoder
 
 model = load_model('modelmeh.h5') # Trained Model
-from keras.losses import MeanAbsoluteError
-model = load_model('model.h5', custom_objects={'MeanAbsoluteError': MeanAbsoluteError})
+
+
 with open('onehot_encoder_geo.pkl','rb') as file: # Feature engineered Column Geography
     onehot_encoder_geo=pickle.load(file)
 
